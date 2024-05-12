@@ -1,0 +1,155 @@
+version: '3.8'
+
+services:
+  consul1:
+    image: consul:1.8.0
+    container_name: consul-master
+    restart: always
+    command: agent -server -client=0.0.0.0 -bootstrap-expect=3 -node=consul-master  -config-dir=/consul/config
+    volumes:
+      - /Discus/consul/consul-master/data:/consul/data
+      - /Discus/consul/consul-master/config:/consul/config
+
+  consul2:
+    image: consul:1.8.0
+    container_name: consul-cluster1
+    restart: always
+    command: agent -server -client=0.0.0.0 -retry-join=consul-master -node=consul-cluster1 -config-dir=/consul/config
+    volumes:
+      - /Discus/consul/consul-cluster1/data:/consul/data
+      - /Discus/consul/consul-cluster1/config:/consul/config
+
+  consul3:
+    image: consul:1.8.0
+    container_name: consul-cluster2
+    restart: always
+    command: agent -server -client=0.0.0.0 -retry-join=consul-master -node=consul-cluster2  -config-dir=/consul/config
+    volumes:
+      - /Discus/consul/consul-cluster2/data:/consul/data
+      - /Discus/consul/consul-cluster2/config:/consul/config
+
+  consul4:
+    image: consul:1.8.0
+    container_name: consul-cluster3
+    restart: always
+    ports:
+    - 8500:8500
+    command: agent -client=0.0.0.0 -retry-join=consul-master -ui -node=consul-cluster3  -config-dir=/consul/config
+    volumes:
+      - /Discus/consul/consul-cluster3/data:/consul/data
+      - /Discus/consul/consul-cluster3/config:/consul/config
+  
+  redis-master:
+    image: redis
+    command: ["redis-server", "/etc/redis/redis.conf", "--requirepass", "Discus_redis"]
+    volumes:
+      - /Discus/redis/redis-master/redis.conf:/etc/redis/redis.conf
+      - /Discus/redis/data/redis-master:/data
+    ports:
+      - "6379:6379"
+    networks:
+      - redis-net
+  
+  redis-slave1:
+    image: redis
+    command: ["redis-server", "/etc/redis/redis.conf", "--slaveof", "redis-master", "6379", "--masterauth", "Discus_redis"]
+    volumes:
+      - /Discus/redis/redis-slave1/redis.conf:/etc/redis/redis.conf
+      - /Discus/redis/data/redis-slave1:/data
+    ports:
+      - "6380:6379"
+    networks:
+      - redis-net
+  
+  redis-slave2:
+    image: redis
+    command: ["redis-server", "/etc/redis/redis.conf", "--slaveof", "redis-master", "6379", "--masterauth", "Discus_redis"]
+    volumes:
+      - /Discus/redis/redis-slave2/redis.conf:/etc/redis/redis.conf
+      - /Discus/redis/data/redis-slave2:/data
+    ports:
+      - "6381:6379"
+    networks:
+      - redis-net
+  
+  redis-sentinel1:
+    image: redis
+    command: ["redis-sentinel", "/etc/redis/sentinel.conf"]
+    volumes:
+      - /Discus/redis/sentinel/sentinel.conf:/etc/redis/sentinel.conf
+    networks:
+      - redis-net
+  
+  redis-sentinel2:
+    image: redis
+    command: ["redis-sentinel", "/etc/redis/sentinel.conf"]
+    volumes:
+      - /Discus/redis/sentinel/sentinel.conf:/etc/redis/sentinel.conf
+    networks:
+      - redis-net
+  
+  redis-sentinel3:
+    image: redis
+    command: ["redis-sentinel", "/etc/redis/sentinel.conf"]
+    volumes:
+      - /Discus/redis/sentinel/sentinel.conf:/etc/redis/sentinel.conf
+    networks:
+      - redis-net
+  mysql:
+    image: mysql:8.0.20   ## 镜像
+    restart: always
+    hostname: mysql
+    container_name: disucs_mysql
+    privileged: true
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: "discus"
+      MYSQL_USER: "discus"
+      MYSQL_PASSWORD: "discus_mysql"
+      MYSQL_ROOT_PASSWORD: "discus_mysql"
+      TZ: Asia/Shanghai
+    command:
+      - --default-authentication-plugin=mysql_native_password
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_bin
+    volumes:
+      - /discus/mysql/data/:/var/lib/mysql/
+  rabbitmq:
+    image: rabbitmq:3.8.3-management
+    container_name: disucs_rabbitmq
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=discus
+      - RABBITMQ_DEFAULT_PASS=discus_rabbitmq
+    volumes:
+      - /discus/rabbitmq/data/:/var/lib/rabbitmq/
+      - /discus/rabbitmq/log:/var/log/rabbitmq/
+    ports:
+      - 5672:5672
+      - 15672:15672
+  minio:
+    image: minio/minio
+    container_name: disucs_minio
+    ports:
+      - 19000:9000
+      - 19001:9001
+    volumes:
+      - /discus/minio/data:/data
+      - /discus/minio/config:/root/.minio
+    environment:
+      MINIO_ACCESS_KEY: "discus"
+      MINIO_SECRET_KEY: "discus_minio"
+    command: server /data --console-address ":9001" -address ":9000"
+    restart: always
+  portainer:
+    image: portainer/portainer
+    container_name: disucs_portainer
+    restart: always
+    ports:
+      - 9000:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock 
+      - /discus/portainer/data:/data
+networks:
+  redis-net:

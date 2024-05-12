@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	
+  <ItemGroup>
+    <PackageReference Include="Castle.Core" Version="5.1.1" />
+    <PackageReference Include="DotNetCore.CAP" Version="8.1.2" />
+    <PackageReference Include="DotNetCore.CAP.Dashboard" Version="8.1.2" />
+    <PackageReference Include="DotNetCore.CAP.MySql" Version="8.1.2" />
+    <PackageReference Include="DotNetCore.CAP.RabbitMQ" Version="8.1.2" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.8.1" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\Discus.SDK.Consul\Discus.SDK.Consul.csproj" />
+    <ProjectReference Include="..\Discus.SDK.Core\Discus.SDK.Core.csproj" />
+    <ProjectReference Include="..\Discus.SDK.File\Discus.SDK.File.csproj" />
+    <ProjectReference Include="..\Discus.SDK.IdGenerater\Discus.SDK.IdGenerater.csproj" />
+    <ProjectReference Include="..\Discus.SDK.MongoDB\Discus.SDK.MongoDB.csproj" />
+    <ProjectReference Include="..\Discus.SDK.RabbitMQ\Discus.SDK.RabbitMQ.csproj" />
+    <ProjectReference Include="..\Discus.SDK.Redis\Discus.SDK.Redis.csproj" />
+    <ProjectReference Include="..\Discus.SDK.Repository.SqlSuger\Discus.SDK.Repository.SqlSugar.csproj" />
+    <ProjectReference Include="..\Discus.SDK.Sqlite\Discus.SDK.Sqlite.csproj" />
+    <ProjectReference Include="..\Discus.Shared.Application.Contracts\Discus.Shared.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

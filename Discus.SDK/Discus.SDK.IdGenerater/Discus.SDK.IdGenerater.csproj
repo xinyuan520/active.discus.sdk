@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Yitter.IdGenerator" Version="1.0.14" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Discus.SDK.Core\Discus.SDK.Core.csproj" />
+	  <ProjectReference Include="..\Discus.SDK.Redis\Discus.SDK.Redis.csproj" />
+	  <ProjectReference Include="..\Discus.SDK.Tools\Discus.SDK.Tools.csproj" />
+	</ItemGroup>
+
+</Project>

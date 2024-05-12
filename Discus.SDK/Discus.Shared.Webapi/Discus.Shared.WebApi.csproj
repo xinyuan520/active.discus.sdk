@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+	
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.HealthChecks.UI.Client" Version="6.0.5" />
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.OpenApi" Version="1.4.3" />
+    <PackageReference Include="prometheus-net.AspNetCore" Version="6.0.0" />
+	<PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.1" />
+	<PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.3.1" />
+	<PackageReference Include="MicroElements.Swashbuckle.FluentValidation" Version="5.7.0" />
+	<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.5.1" />
+	<PackageReference Include="AspNetCore.HealthChecks.MySql" Version="6.0.2" />
+	<PackageReference Include="LiteX.HealthChecks.Redis" Version="3.0.0" />
+	<PackageReference Include="MiniProfiler.AspNetCore.Mvc" Version="4.2.22" />
+	<PackageReference Include="MiniProfiler.EntityFrameworkCore" Version="4.2.22" />
+	<PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
+	<PackageReference Include="Serilog.Sinks.MySQL" Version="4.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Discus.SDK.Consul\Discus.SDK.Consul.csproj" />
+    <ProjectReference Include="..\Discus.SDK.Core\Discus.SDK.Core.csproj" />
+    <ProjectReference Include="..\Discus.SDK.Redis\Discus.SDK.Redis.csproj" />
+    <ProjectReference Include="..\Discus.SDK.Sqlite\Discus.SDK.Sqlite.csproj" />
+    <ProjectReference Include="..\Discus.SDK.Tools\Discus.SDK.Tools.csproj" />
+  </ItemGroup>
+
+</Project>

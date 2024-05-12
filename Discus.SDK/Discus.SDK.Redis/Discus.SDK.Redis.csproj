@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CSRedisCore" Version="3.8.669" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Discus.SDK.Core\Discus.SDK.Core.csproj" />
+  </ItemGroup>
+
+</Project>

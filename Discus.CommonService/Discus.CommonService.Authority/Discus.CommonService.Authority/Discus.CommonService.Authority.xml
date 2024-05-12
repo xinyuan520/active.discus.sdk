@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Discus.CommonService.Authority</name>
+    </assembly>
+    <members>
+        <member name="M:Discus.CommonService.Authority.Controllers.LoginController.ShowInfo">
+            <summary>
+            ShowInfo
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.CommonService.Authority.Controllers.UserInfoController.ShowUser">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.CommonService.Authority.Controllers.UserInfoController.GetAll">
+            <summary>
+            获取用户列表
+            </summary>
+        </member>
+        <member name="M:Discus.CommonService.Authority.Controllers.UserInfoController.GetById(System.Int64)">
+            <summary>
+            获取用户信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

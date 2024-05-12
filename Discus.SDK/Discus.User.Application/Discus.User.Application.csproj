@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Discus.Shared.Application\Discus.Shared.Application.csproj" />
+    <ProjectReference Include="..\Discus.Shared.Repository\Discus.Shared.Repository.csproj" />
+    <ProjectReference Include="..\Discus.Shared.Webapi\Discus.Shared.WebApi.csproj" />
+    <ProjectReference Include="..\Discus.User.Application.Contracts\Discus.User.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Discus.User.Repository\Discus.User.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

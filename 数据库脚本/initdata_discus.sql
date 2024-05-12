@@ -1,0 +1,4 @@
+use discus;
+TRUNCATE user_info;
+INSERT INTO `discus`.`user_info` (`id`, `user_name`, `password`, `nick_name`, `mobile`, `email`, `age`, `sex`, `adress`, `description`, `create_by_id`, `create_by_time`, `edit_by_id`, `edit_by_time`, `state`, `is_admin`, `is_deleted`) VALUES (1, 'admin', 'E10ADC3949BA59ABBE56E057F20F883E', 'admin', '13113131313', '11@qq.com', 1, 1, '上海市', NULL, 1, '2023-03-18 18:48:27', 1, '2023-03-18 18:48:30', 0, 1, 0);
+INSERT INTO `discus`.`user_info` (`id`, `user_name`, `password`, `nick_name`, `mobile`, `email`, `age`, `sex`, `adress`, `description`, `create_by_id`, `create_by_time`, `edit_by_id`, `edit_by_time`, `state`, `is_admin`, `is_deleted`) VALUES (2, 'xusc', 'E10ADC3949BA59ABBE56E057F20F883E', 'xusc', '15927240954', '764855472@qq.com', 1, 1, '湖北省武汉市', NULL, 1, now(), 1, now(), 0, 1, 0);

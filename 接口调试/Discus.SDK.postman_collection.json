@@ -1,0 +1,485 @@
+{
+	"info": {
+		"_postman_id": "1810be3f-73e8-4c88-9398-79c46878a9e5",
+		"name": "Discus.SDK",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27883322"
+	},
+	"item": [
+		{
+			"name": "File",
+			"item": [
+				{
+					"name": "AllMyBucketList",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/File/AllMyBucketList",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"File",
+								"AllMyBucketList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UploadFile",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {
+								"src": "/F:/TestImages/1.jpeg"
+							}
+						},
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/File/UploadFile/jpg",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"File",
+								"UploadFile",
+								"jpg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UploadFilePath",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n  \"filePath\": \"F:\\\\TestImages1\\\\2.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/File/UploadFilePath",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"File",
+								"UploadFilePath"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DownLoadFileAsync",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/File/DownLoadFile/8d99476f54364b07a1e031e24e83cc06.jpg",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"File",
+								"DownLoadFile",
+								"8d99476f54364b07a1e031e24e83cc06.jpg"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SaveFileAsync",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"fileName\": \"fde9817867e64245998aef1bfb041801.jpg\",\r\n  \"filePath\": \"F:\\\\TestImages2\\\\1.jpg\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/File/SaveFileAsync",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"File",
+								"SaveFileAsync"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteFileAsync",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/File/DeleteFileAsync/8d99476f54364b07a1e031e24e83cc06.jpg",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"File",
+								"DeleteFileAsync",
+								"8d99476f54364b07a1e031e24e83cc06.jpg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UserInfo",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"lisi\",\r\n  \"password\": \"e10adc3949ba59abbe56e057f20f883e\",\r\n  \"nickname\": \"lisi\",\r\n  \"mobile\": \"13476169393\",\r\n  \"email\": \"248578488@qq.com\",\r\n  \"age\": 25,\r\n  \"sex\": 1,\r\n  \"description\": \"天天\",\r\n  \"state\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/UserInfo/Create",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"UserInfo",
+								"Create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\":\"427753982758981\",\r\n  \"userName\": \"lisi\",\r\n  \"password\": \"e10adc3949ba59abbe56e057f20f883e\",\r\n  \"nickname\": \"lisi\",\r\n  \"mobile\": \"13476169393\",\r\n  \"email\": \"248578488@qq.com\",\r\n  \"age\": 25,\r\n  \"sex\": 1,\r\n  \"description\": \"天天1\",\r\n  \"state\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/UserInfo/Update",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"UserInfo",
+								"Update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/UserInfo/GetById/1",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"UserInfo",
+								"GetById",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/UserInfo/GetAll",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"UserInfo",
+								"GetAll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/UserInfo/Delete/427753044980293",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"UserInfo",
+								"Delete",
+								"427753044980293"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ThirdParty",
+			"item": [
+				{
+					"name": "RedisStringSet",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/ThirdParty/RedisStringSet",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"ThirdParty",
+								"RedisStringSet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/ThirdParty/GetIdGenerater",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"ThirdParty",
+								"GetIdGenerater"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Message",
+			"item": [
+				{
+					"name": "Publish",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/Message/Publish",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"Message",
+								"Publish"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Jwt",
+			"item": [
+				{
+					"name": "GetById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1laWQiOiIyIiwianRpIjoieHVzYyIsIm5iZiI6MTY4NzU1NDE4NCwiZXhwIjoxNjg3OTE0MTg0LCJpc3MiOiJkaXNjdXMiLCJhdWQiOiJtYW5hZ2VyIn0.F9xUgAbmY_79aitm-1dhrIMNPPNVhCvHoPZ2v8lEKD8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/Jwt/GetById",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"Jwt",
+								"GetById"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"account\": \"xusc\",\r\n  \"password\": \"E10ADC3949BA59ABBE56E057F20F883E\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://124.70.198.29:8031/api/Jwt/Login",
+							"protocol": "http",
+							"host": [
+								"124",
+								"70",
+								"198",
+								"29"
+							],
+							"port": "8031",
+							"path": [
+								"api",
+								"Jwt",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

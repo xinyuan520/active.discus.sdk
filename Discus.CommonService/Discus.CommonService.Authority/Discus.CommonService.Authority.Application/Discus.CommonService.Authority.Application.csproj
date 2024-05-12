@@ -1,0 +1,40 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="DotNetCore.CAP" Version="8.1.2" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Discus.CommonService.Authority.Application.Contracts\Discus.CommonService.Authority.Application.Contracts.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Discus.SDK.Repository.SqlSugar">
+      <HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.SDK.Repository.SqlSugar.dll</HintPath>
+    </Reference>
+    <Reference Include="Discus.Shared.Application">
+      <HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.Shared.Application.dll</HintPath>
+    </Reference>
+	  <Reference Include="Discus.Shared.Application.Contracts">
+		  <HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.Shared.Application.Contracts.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Discus.Shared.Repository">
+		  <HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.Shared.Repository.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Discus.Shared.WebApi">
+		  <HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.Shared.WebApi.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Discus.SDK.RabbitMQ">
+		  <HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.SDK.RabbitMQ.dll</HintPath>
+	  </Reference>
+  </ItemGroup>
+
+</Project>

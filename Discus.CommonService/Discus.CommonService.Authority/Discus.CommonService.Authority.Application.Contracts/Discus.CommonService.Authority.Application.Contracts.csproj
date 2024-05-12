@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Discus.CommonService.Authority.Repository\Discus.CommonService.Authority.Repository.csproj" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="Discus.Shared.Application.Contracts">
+			<HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.Shared.Application.Contracts.dll</HintPath>
+		</Reference>
+		<Reference Include="Discus.SDK.Tools">
+			<HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.SDK.Tools.dll</HintPath>
+		</Reference>
+	</ItemGroup>
+	
+
+</Project>

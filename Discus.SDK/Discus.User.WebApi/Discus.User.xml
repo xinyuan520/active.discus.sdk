@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Discus.User</name>
+    </assembly>
+    <members>
+        <member name="M:Discus.User.Controllers.FileController.GetAllMyBucketList">
+            <summary>
+            获取所有存储桶
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.FileController.UploadStreamAsync(System.String)">
+            <summary>
+            上传文件-文件流
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.FileController.UploadFileAsync(Discus.SDK.File.RequestFileParam)">
+            <summary>
+            上传单个文件-文件路径  {"filePath": "F:\\TestImages1\\1.jpg"},
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.FileController.DownLoadFileAsync(System.String)">
+            <summary>
+            下载文件
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.FileController.SaveFileAsync(Discus.SDK.File.RequestFileParam)">
+            <summary>
+            保存单个文件
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.FileController.DeleteFileAsync(System.String)">
+            <summary>
+            删除文件
+            </summary>
+            <param name="fileName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.JwtController.GetById">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.MessageController.Publish">
+            <summary>
+            发布消息测试
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.MongoController.GetAsync">
+            <summary>
+            获取一条记录
+            </summary>
+        </member>
+        <member name="M:Discus.User.Controllers.SqliteController.Create(Discus.User.Application.Contracts.Dtos.SettingModelDto)">
+            <summary>
+            新增配置项
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.SqliteController.Update(Discus.User.Repository.SqliteEnities.SettingModel)">
+            <summary>
+            修改配置项
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.SqliteController.Delete(System.Int32)">
+            <summary>
+            删除配置项
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.SqliteController.GetById(System.Int32)">
+            <summary>
+            查询配置项
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.ThirdPartyController.RedisStringSet">
+            <summary>
+            RedisStringSet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.ThirdPartyController.GetIdGenerater">
+            <summary>
+            测试Id生成器
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.UserInfoController.Create(Discus.User.Application.Contracts.Dtos.UserInfoRequestDto)">
+            <summary>
+            创建用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.UserInfoController.Update(Discus.User.Application.Contracts.Dtos.UserInfoRequestDto)">
+            <summary>
+            创建用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.UserInfoController.Delete(System.Int64)">
+            <summary>
+            删除用户信息
+            </summary>
+            <param name="userId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.UserInfoController.GetById(System.Int64)">
+            <summary>
+            获取用户信息
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Discus.User.Controllers.UserInfoController.GetAll">
+            <summary>
+            获取用户列表
+            </summary>
+        </member>
+    </members>
+</doc>

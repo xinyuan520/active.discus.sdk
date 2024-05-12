@@ -1,0 +1,84 @@
+version: '3.8'
+services:
+  consul:
+    image: consul:latest
+    ports:
+      - "8500:8500"
+    command: agent -dev -client=0.0.0.0
+  redis:
+    image: redis:latest
+    container_name: disucs_redis
+    command: redis-server --requirepass discus_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      -  /discus/redis/data:/data
+  mysql:
+    image: mysql:8.0.20   ## 镜像
+    restart: always
+    hostname: mysql
+    container_name: disucs_mysql
+    privileged: true
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: "discus"
+      MYSQL_USER: "discus"
+      MYSQL_PASSWORD: "discus_mysql"
+      MYSQL_ROOT_PASSWORD: "discus_mysql"
+      TZ: Asia/Shanghai
+    command:
+      - --default-authentication-plugin=mysql_native_password
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_bin
+    volumes:
+      - /discus/mysql/data/:/var/lib/mysql/
+  rabbitmq:
+    image: rabbitmq:3.8.3-management
+    container_name: disucs_rabbitmq
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=discus
+      - RABBITMQ_DEFAULT_PASS=discus_rabbitmq
+    volumes:
+      - /discus/rabbitmq/data/:/var/lib/rabbitmq/
+      - /discus/rabbitmq/log:/var/log/rabbitmq/
+    ports:
+      - 5672:5672
+      - 15672:15672
+  minio:
+    image: minio/minio
+    container_name: disucs_minio
+    ports:
+      - 19000:9000
+      - 19001:9001
+    volumes:
+      - /discus/minio/data:/data
+      - /discus/minio/config:/root/.minio
+    environment:
+      MINIO_ACCESS_KEY: "discus"
+      MINIO_SECRET_KEY: "discus_minio"
+    command: server /data --console-address ":9001" -address ":9000"
+    restart: always
+  portainer:
+    image: portainer/portainer-ce
+    container_name: disucs_portainer
+    ports:
+      - 9000:9000
+    volumes:
+      - /discus/portainer/var/run/docker.sock:/var/run/docker.sock
+      - /discus/portainer/data:/data
+  discus.user:
+    image: discus_user
+    restart: always
+    ports:
+      - 8031:8031
+    network_mode: "host"
+    volumes:
+      - "/discus/discus.user/hosting.json:/app/hosting.json"
+      - "/discus/discus.user/appsettings.json:/app/appsettings.json"
+      - "/discus/discus.user/appsettings.shared.json:/app/appsettings.shared.json"
+      - "/etc/localtime:/etc/localtime"
+    depends_on:
+      - redis
+      - consul

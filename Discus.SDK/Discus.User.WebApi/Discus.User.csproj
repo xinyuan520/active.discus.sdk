@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+	<PropertyGroup>
+		<DocumentationFile>Discus.User.xml</DocumentationFile>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Description>用户中心服务</Description>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<ProduceReferenceAssembly>false</ProduceReferenceAssembly>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+
+	</PropertyGroup>
+	<ItemGroup>
+	  <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Discus.Shared.Webapi\Discus.Shared.WebApi.csproj" />
+    <ProjectReference Include="..\Discus.User.Application.Contracts\Discus.User.Application.Contracts.csproj" />
+    <ProjectReference Include="..\Discus.User.Application\Discus.User.Application.csproj" />
+  </ItemGroup>
+
+</Project>
