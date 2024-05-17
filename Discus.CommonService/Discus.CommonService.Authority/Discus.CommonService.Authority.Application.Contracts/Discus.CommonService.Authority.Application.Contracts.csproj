@@ -11,11 +11,17 @@
   </ItemGroup>
 
 	<ItemGroup>
+		<Reference Include="Discus.Shared.Application">
+		  <HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.Shared.Application.dll</HintPath>
+		</Reference>
 		<Reference Include="Discus.Shared.Application.Contracts">
 			<HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.Shared.Application.Contracts.dll</HintPath>
 		</Reference>
 		<Reference Include="Discus.SDK.Tools">
 			<HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.SDK.Tools.dll</HintPath>
+		</Reference>
+		<Reference Include="Discus.Shared.WebApi">
+		  <HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.Shared.WebApi.dll</HintPath>
 		</Reference>
 	</ItemGroup>
 	

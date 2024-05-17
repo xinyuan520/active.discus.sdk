@@ -4,11 +4,10 @@
         <name>Discus.CommonService.Authority</name>
     </assembly>
     <members>
-        <member name="M:Discus.CommonService.Authority.Controllers.LoginController.ShowInfo">
+        <member name="M:Discus.CommonService.Authority.Controllers.LoginController.Login(Discus.CommonService.Authority.Application.Contracts.Dtos.LoginRequestDto)">
             <summary>
-            ShowInfo
+            登录
             </summary>
-            <returns></returns>
         </member>
         <member name="M:Discus.CommonService.Authority.Controllers.UserInfoController.ShowUser">
             <summary>
