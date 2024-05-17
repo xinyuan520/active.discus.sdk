@@ -16,11 +16,6 @@ namespace Discus.CommonService.Authority.Application.Services
             _userinfoRepository = userinfoRepository;
         }
 
-        public string ShowUser()
-        {
-            return "ShowUser";
-        }
-
         public async Task<List<UserInfoDto>> GetAll()
         {
             var userInfoList = await _userinfoRepository.GetAllAsync();

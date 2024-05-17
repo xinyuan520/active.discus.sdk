@@ -1,4 +1,8 @@
-﻿namespace Discus.CommonService.Authority.Controllers
+﻿using Discus.CommonService.Authority.Application.Contracts.Dtos;
+using Discus.SDK.Tools.HttpResult;
+using Microsoft.AspNetCore.Authorization;
+
+namespace Discus.CommonService.Authority.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -12,14 +16,13 @@
         }
 
         /// <summary>
-        /// ShowInfo
+        /// 登录
         /// </summary>
-        /// <returns></returns>
-        [HttpGet("ShowInfo")]
-        public string ShowInfo()
+        [HttpPost("Login")]
+        [AllowAnonymous]
+        public async Task<ApiResult> Login(LoginRequestDto request)
         {
-            return _loginService.ShowInfo();
+            return await _loginService.Login(request);
         }
-
     }
 }

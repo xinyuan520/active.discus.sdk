@@ -17,8 +17,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="Discus.SDK.Core">
+      <HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.SDK.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Discus.SDK.Repository.SqlSugar">
       <HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.SDK.Repository.SqlSugar.dll</HintPath>
+    </Reference>
+    <Reference Include="Discus.SDK.Tools">
+      <HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.SDK.Tools.dll</HintPath>
     </Reference>
     <Reference Include="Discus.Shared.Application">
       <HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.Shared.Application.dll</HintPath>

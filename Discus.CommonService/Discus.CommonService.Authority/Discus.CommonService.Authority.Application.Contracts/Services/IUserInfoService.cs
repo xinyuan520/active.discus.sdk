@@ -9,8 +9,6 @@ namespace Discus.CommonService.Authority.Application.Contracts.Services
 {
     public interface IUserInfoService : IService
     {
-        string ShowUser();
-
         Task<List<UserInfoDto>> GetAll();
 
         Task<UserInfoDto> GetById(long id);

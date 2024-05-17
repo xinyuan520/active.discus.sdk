@@ -17,16 +17,6 @@ namespace Discus.CommonService.Authority.Controllers
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet("ShowUser")]
-        public string ShowUser()
-        {
-           return _userInfoService.ShowUser();
-        }
-
-        /// <summary>
         /// 获取用户列表
         /// </summary>
         [HttpGet("GetAll")]
