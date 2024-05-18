@@ -2,6 +2,7 @@
 using Discus.CommonService.Authority.Application.Contracts.Dtos;
 using Discus.CommonService.Authority.Repository.Entities;
 using Discus.SDK.Repository.SqlSugar.Repository;
+using Discus.Shared.WebApi.Authorization;
 
 namespace Discus.CommonService.Authority.Application.Services
 {
@@ -25,6 +26,12 @@ namespace Discus.CommonService.Authority.Application.Services
         public async Task<UserInfoDto> GetById(long Id)
         {
             var userInfo = await _userinfoRepository.GetByIdAsync(Id);
+            return _mapper.Map<UserInfoDto>(userInfo);
+        }
+
+        public async Task<UserInfoDto> GetById(AutoInfoModel autoInfoModel)
+        {
+            var userInfo = await _userinfoRepository.GetByIdAsync(autoInfoModel.Id);
             return _mapper.Map<UserInfoDto>(userInfo);
         }
     }

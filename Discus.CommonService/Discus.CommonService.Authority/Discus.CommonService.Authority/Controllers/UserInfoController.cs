@@ -1,4 +1,6 @@
 ﻿using Discus.CommonService.Authority.Application.Contracts.Dtos;
+using Discus.Shared.Webapi.Controller;
+using Discus.Shared.WebApi.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Runtime.CompilerServices;
@@ -7,7 +9,7 @@ namespace Discus.CommonService.Authority.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UserInfoController : ControllerBase
+    public class UserInfoController : BasicController
     {
         private readonly IUserInfoService _userInfoService;
 
@@ -19,7 +21,7 @@ namespace Discus.CommonService.Authority.Controllers
         /// <summary>
         /// 获取用户列表
         /// </summary>
-        [HttpGet("GetAll")]
+        [HttpGet("GetAll"),]
         public async Task<List<UserInfoDto>> GetAll()
         {
             return await _userInfoService.GetAll();
@@ -28,13 +30,13 @@ namespace Discus.CommonService.Authority.Controllers
         /// <summary>
         /// 获取用户信息
         /// </summary>
-        /// <param name="id"></param>
         /// <returns></returns>
         //[CustomerAuthorize]
-        [Route("GetById/{id}"), HttpGet]
-        public async Task<UserInfoDto> GetById(long id)
+        [HttpGet("GetById"), CustomerAuthorize(AuthCode = "")]
+        public async Task<UserInfoDto> GetById()
         {
-            return await _userInfoService.GetById(id);
+            AutoInfoModel autoInfoModel = this.GetAutoInfoModel();
+            return await _userInfoService.GetById(autoInfoModel);
         }
     }
 }

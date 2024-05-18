@@ -9,22 +9,15 @@
             登录
             </summary>
         </member>
-        <member name="M:Discus.CommonService.Authority.Controllers.UserInfoController.ShowUser">
-            <summary>
-            
-            </summary>
-            <returns></returns>
-        </member>
         <member name="M:Discus.CommonService.Authority.Controllers.UserInfoController.GetAll">
             <summary>
             获取用户列表
             </summary>
         </member>
-        <member name="M:Discus.CommonService.Authority.Controllers.UserInfoController.GetById(System.Int64)">
+        <member name="M:Discus.CommonService.Authority.Controllers.UserInfoController.GetById">
             <summary>
             获取用户信息
             </summary>
-            <param name="id"></param>
             <returns></returns>
         </member>
     </members>

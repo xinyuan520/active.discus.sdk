@@ -1,4 +1,5 @@
 ﻿using Discus.CommonService.Authority.Application.Contracts.Dtos;
+using Discus.Shared.WebApi.Authorization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace Discus.CommonService.Authority.Application.Contracts.Services
     {
         Task<List<UserInfoDto>> GetAll();
 
-        Task<UserInfoDto> GetById(long id);
+        Task<UserInfoDto> GetById(long Id);
+
+        Task<UserInfoDto> GetById(AutoInfoModel autoInfoModel);
     }
 }
