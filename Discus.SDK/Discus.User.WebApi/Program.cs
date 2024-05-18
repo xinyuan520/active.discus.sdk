@@ -9,11 +9,3 @@ var app = builder.ConfigureDefault(serviceInfo).Build();
 app.UseCustomMiddleware();
 
 await app.ChangeThreadPoolSettings().UseConsul(serviceInfo.Id).RunAsync();
-
-// Configure the HTTP request pipeline.
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();

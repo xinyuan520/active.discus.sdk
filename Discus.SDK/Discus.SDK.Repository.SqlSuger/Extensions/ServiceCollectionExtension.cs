@@ -20,10 +20,10 @@
                 });
 
                 // 输出Sql语句到控制台，方便调试
-                db.Aop.OnLogExecuting = (sql, pars) =>
-                {
-                    Console.WriteLine(sql + "\r\n");
-                };
+                //db.Aop.OnLogExecuting = (sql, pars) =>
+                //{
+                //    Console.WriteLine(sql + "\r\n");
+                //};
 
                 return db;
             });
