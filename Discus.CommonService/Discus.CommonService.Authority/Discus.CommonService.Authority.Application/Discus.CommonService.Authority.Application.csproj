@@ -20,6 +20,9 @@
     <Reference Include="Discus.SDK.Core">
       <HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.SDK.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Discus.SDK.Redis">
+      <HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.SDK.Redis.dll</HintPath>
+    </Reference>
     <Reference Include="Discus.SDK.Repository.SqlSugar">
       <HintPath>\\192.168.32.1\SharePath\Discus.SDK\Discus.SDK.Repository.SqlSugar.dll</HintPath>
     </Reference>

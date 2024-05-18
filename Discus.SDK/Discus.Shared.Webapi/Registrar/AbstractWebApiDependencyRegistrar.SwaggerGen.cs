@@ -13,7 +13,7 @@
                 c.SwaggerDoc(openApiInfo.Version, openApiInfo);
 
                 //采用bearer token认证
-                c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+                c.AddSecurityDefinition("Bearer ", new OpenApiSecurityScheme
                 {
                     Name = "Authorization",
                     Type = SecuritySchemeType.ApiKey,
