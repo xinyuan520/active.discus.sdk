@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,7 +21,7 @@ namespace Discus.Shared.WebApi.Authorization.JwtBearer
                 ValidateIssuer = tokenConfig.ValidateIssuer,
                 ValidIssuer = tokenConfig.ValidIssuer,
                 ValidateIssuerSigningKey = tokenConfig.ValidateIssuerSigningKey,
-                IssuerSigningKey = new SymmetricSecurityKey(tokenConfig.Encoding.GetBytes(tokenConfig.SymmetricSecurityKey)),
+                IssuerSigningKey = new SymmetricSecurityKey(Get256BitKey(tokenConfig.SymmetricSecurityKey)),
                 ValidateAudience = tokenConfig.ValidateAudience,
                 ValidAudience = tokenConfig.ValidAudience,
                 ValidateLifetime = tokenConfig.ValidateLifetime,
@@ -59,7 +60,7 @@ namespace Discus.Shared.WebApi.Authorization.JwtBearer
         /// <returns></returns>
         private static JwtToken WriteToken(JWTConfig jwtConfig, Claim[] claims, Tokens tokenType)
         {
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtConfig.SymmetricSecurityKey));
+            var key = new SymmetricSecurityKey(Get256BitKey(jwtConfig.SymmetricSecurityKey));
             string issuer = jwtConfig.ValidIssuer;
             string audience = tokenType.Equals(Tokens.AccessToken) ? jwtConfig.ValidAudience : jwtConfig.RefreshTokenAudience;
             int expiresencods = tokenType.Equals(Tokens.AccessToken) ? jwtConfig.Expire : jwtConfig.RefreshTokenExpire;
@@ -73,6 +74,20 @@ namespace Discus.Shared.WebApi.Authorization.JwtBearer
                 signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256)
             );
             return new JwtToken(new JwtSecurityTokenHandler().WriteToken(token), expires);
+        }
+
+        private static byte[] Get256BitKey(string customKey)
+        {
+            // 使用SHA-256哈希函数计算字符串的哈希值
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] hashBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(customKey));
+
+                // 返回前32个字节作为256位密钥
+                byte[] keyBytes = new byte[32];
+                Array.Copy(hashBytes, keyBytes, 32);
+                return keyBytes;
+            }
         }
     }
 }
